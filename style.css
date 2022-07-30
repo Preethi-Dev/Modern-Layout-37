@@ -14,7 +14,7 @@ a {
 /* Fonts */
 @font-face {
   font-family: "Strawberry";
-  src: url(/assets/fonts/Strawberry-rggZK.otf);
+  src: url(./assets/fonts/Strawberry-rggZK.otf);
 }
 
 /* Variables */
@@ -27,7 +27,6 @@ a {
 body {
   background-color: var(--secondary);
   color: var(--primary);
-  font-family: "Strawberry";
 }
 
 img {
@@ -45,6 +44,8 @@ header {
 }
 
 header a {
+  font-family: "Strawberry";
+
   font-weight: 400;
   font-size: 1.125rem;
   line-height: 20px;
@@ -57,6 +58,8 @@ header a.active {
 }
 
 main .text p {
+  font-family: "Strawberry";
+
   font-weight: 400;
   text-transform: uppercase;
 }
