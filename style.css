@@ -1,5 +1,182 @@
 /* Resets */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
 /* Fonts */
+@font-face {
+  font-family: "Strawberry";
+  src: url(/assets/fonts/Strawberry-rggZK.otf);
+}
+
 /* Variables */
+:root {
+  --primary: #111111;
+  --secondary: #fafafa;
+}
+
 /* Base Styles */
+body {
+  background-color: var(--secondary);
+  color: var(--primary);
+  font-family: "Strawberry";
+}
+
+img {
+  max-width: 100%;
+}
+
+a {
+  color: var(--primary);
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+header a {
+  font-weight: 400;
+  font-size: 1.125rem;
+  line-height: 20px;
+  text-align: right;
+  opacity: 0.32;
+}
+
+header a.active {
+  opacity: 1;
+}
+
+main .text p {
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+main .white_text p {
+  color: var(--secondary);
+}
+
+main .welcome_banner {
+  display: flex;
+  align-items: center;
+}
+
+main .welcome_banner .vertical_text p {
+  font-weight: 400;
+  font-size: 1.125rem;
+  line-height: 20px;
+  text-align: right;
+  writing-mode: vertical-lr;
+
+  transform: rotate(180deg);
+}
+
 /* Mobile Styles */
+
+header {
+  padding: 2rem;
+}
+
+main {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+main > * {
+  grid-column: 1 / -1;
+}
+
+main .text p {
+  font-size: 7.375rem;
+}
+
+main .welcome_banner .vertical_text p {
+  padding: 1.5rem;
+}
+
+main .welcome_banner .image .white_text {
+  display: none;
+}
+
+/* Tablet Styles */
+@media screen and (min-width: 790px) {
+  main {
+    grid-template-columns: repeat(8, 1fr);
+  }
+
+  .text {
+    display: flex;
+    flex-direction: column;
+
+    grid-column: 1 / span 6;
+    grid-row: 1;
+  }
+
+  main .text p {
+    font-size: 10.375rem;
+  }
+
+  .text p:nth-child(2) {
+    align-self: center;
+  }
+
+  .welcome_banner {
+    grid-column: span 6 / -1;
+    grid-row: 1;
+  }
+}
+
+/* Tablet Styles */
+@media screen and (min-width: 1500px) {
+  header {
+    padding: 4.5rem;
+  }
+
+  main {
+    grid-template-columns: repeat(12, 1fr);
+
+    max-width: 1540px;
+    margin: 0 auto;
+  }
+
+  .text {
+    grid-column: 2 / span 8;
+  }
+
+  .welcome_banner {
+    grid-column: 4 / -1;
+    align-self: end;
+    justify-self: start;
+  }
+
+  main .text p {
+    font-size: 14.375rem;
+    line-height: 261px;
+  }
+
+  main .welcome_banner .image {
+    position: relative;
+    overflow: hidden;
+  }
+
+  main .welcome_banner .image .white_text p:nth-child(1) {
+    margin-left: 7.5rem;
+  }
+
+  main .welcome_banner .image .white_text {
+    position: absolute;
+    display: block;
+
+    top: -6rem;
+    left: -16rem;
+  }
+}
